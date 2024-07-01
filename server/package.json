@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "build":"npm install --prefix ../client/myapp && npm run build --prefix ../client/myapp && npm install"
+    "start": "node index.js",
+    "build":"npm install --prefix ./client/myapp && npm run build --prefix ./client/myapp && npm install"
   },
   "author": "Nitish kumar",
   "license": "ISC",
