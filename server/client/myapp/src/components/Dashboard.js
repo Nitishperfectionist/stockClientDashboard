@@ -6,7 +6,7 @@ const stocks = ['GOOG', 'TSLA', 'AMZN', 'META', 'NVDA'];
 const Dashboard = ({ email }) => {
   const [subscribedStocks, setSubscribedStocks] = useState([]);
   const [stockPrices, setStockPrices] = useState({});
-  const socket = io('http://localhost:5000');
+  const socket = io(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     socket.on('connect', () => {

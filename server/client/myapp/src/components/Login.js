@@ -6,7 +6,7 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      await axios.post('http://localhost:5000/login', { email });
+      await axios.post(`${process.env.REACT_APP_API_URL}/login`, { email });
       onLogin(email);
     } catch (error) {
       console.error('Login error', error);
