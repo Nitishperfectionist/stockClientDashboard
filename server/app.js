@@ -2,7 +2,11 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+
+// Allow requests from your frontend URL
+app.use(cors({
+  origin: 'https://stockclientdashboard-frontend3.onrender.com'
+}));
 
 app.use(express.json());
 
