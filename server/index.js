@@ -8,14 +8,6 @@ const app = require('./app');
 const server = http.createServer(app);
 console.log(__dirname);
 
-// Use the client app, resolving the path correctly
-app.use(express.static(path.join(__dirname, '/client/myapp/build')));
-
-app.get('*',(req,res)=>{
-  res.sendFile(path.join(__dirname, '/client/myapp/build/index.html'))
-})
-
-
 const io = socketIo(server, {
   cors: {
     origin: '*',
