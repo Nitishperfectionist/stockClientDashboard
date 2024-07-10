@@ -1,19 +1,18 @@
 const express = require('express');
 const http = require('http');
-const path = require('path'); // Import path module for resolving paths
+const path = require('path');
 const socketIo = require('socket.io');
 const { stocks, stockPrices } = require('./randomStockPrices');
 const app = require('./app');
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config();
 
-const PORT = process.env.PORT || 5000; // Use port from .env or fallback to 5000
+const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(app);
-console.log(__dirname);
 
 const io = socketIo(server, {
   cors: {
-    origin: '*',
+    origin: 'https://stockclientdashboard-frontend3.onrender.com', // Allow requests from your frontend URL
   }
 });
 
