@@ -4,6 +4,9 @@ const path = require('path'); // Import path module for resolving paths
 const socketIo = require('socket.io');
 const { stocks, stockPrices } = require('./randomStockPrices');
 const app = require('./app');
+require('dotenv').config(); // Load environment variables from .env file
+
+const PORT = process.env.PORT || 5000; // Use port from .env or fallback to 5000
 
 const server = http.createServer(app);
 console.log(__dirname);
@@ -13,8 +16,6 @@ const io = socketIo(server, {
     origin: '*',
   }
 });
-
-
 
 io.on('connection', (socket) => {
   console.log('New client connected');
@@ -35,6 +36,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5000, () => {
-  console.log('Server is running on port 5000');
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
