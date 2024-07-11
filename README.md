@@ -29,7 +29,7 @@ This project is a stock broker client web dashboard that allows users to log in 
    npm start
 
 ### Frontend
-1.Navigate to the `/server/client/myapp` directory:
+1.Navigate to the `/client/myapp` directory:
 2.npm install
 3.npm start
 
